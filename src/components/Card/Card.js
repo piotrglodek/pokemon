@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Box = styled(Link)`
-  width: 16rem;
+  width: 100%;
   border-radius: 1.5rem;
   padding: 2.5rem 1.8rem;
-  color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({ $bgColor }) => $bgColor};
+  text-decoration: none;
+  display: block;
 `;
 
 export const Title = styled.h2`
@@ -14,10 +16,10 @@ export const Title = styled.h2`
   color: ${({ theme: { color } }) => color.white};
   font-weight: 700;
   margin: 0;
-  padding-bottom: 1rem;
 `;
 
 export const Wrapper = styled.div`
+  padding-top: 1rem;
   width: 100%;
   display: flex;
 `;
@@ -31,6 +33,7 @@ export const Badge = styled.p`
   padding-bottom: 0.6rem;
   width: max-content;
   border-radius: 0.8rem;
+  background-color: ${({ $bgColor }) => $bgColor};
 `;
 
 export const Image = styled.img`
@@ -42,11 +45,11 @@ export const Image = styled.img`
 
 Box.propTypes = {
   to: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
+  $bgColor: PropTypes.string.isRequired,
 };
 
 Badge.propTypes = {
-  badgeBackgroundColor: PropTypes.string.isRequired,
+  $bgColor: PropTypes.string.isRequired,
 };
 
 Image.propTypes = {
