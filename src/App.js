@@ -1,7 +1,8 @@
 import React from 'react';
+import Providers from './Providers';
 
 function App() {
-  return <>Pokedex</>;
+  return <Providers>Pokedex</Providers>;
 }
 
 export default App;
