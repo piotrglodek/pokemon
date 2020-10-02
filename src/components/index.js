@@ -9,3 +9,4 @@ export { Container } from './Container/Container';
 export { Layout };
 export { Arrow };
 export { Spinner } from './Spinner/Spinner';
+export { default as Pokemons } from './Pokemons/Pokemons';
