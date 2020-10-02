@@ -1,42 +1,61 @@
 import React from 'react';
-import { withTheme } from 'styled-components';
 import { useSetPageTitle } from '../hooks/useSetPageTitle';
 // components
 import { Container, Typography, Card, Layout } from '../components';
 
-const Home = props => {
+const cardsData = [
+  {
+    color: 'green',
+    to: '/pokedex',
+    title: 'Pokedex',
+  },
+  {
+    color: 'red',
+    to: '/movies',
+    title: 'Moves',
+  },
+  {
+    color: 'blue',
+    to: '/abilities',
+    title: 'Abilities',
+  },
+  {
+    color: 'yellow',
+    to: '/items',
+    title: 'Items',
+  },
+  {
+    color: 'violet',
+    to: '/locations',
+    title: 'Locations',
+  },
+  {
+    color: 'brown',
+    to: '/type',
+    title: 'Type',
+  },
+];
+
+const Cards = cardsData.map(card => {
+  const { color, to, title } = card;
+  return (
+    <Card.Box key={title} color={color} to={to}>
+      <Card.Title>{title}</Card.Title>
+    </Card.Box>
+  );
+});
+
+const Home = () => {
   useSetPageTitle('Home');
-  const {
-    theme: { color },
-  } = props;
 
   return (
     <>
       <Container>
         <Typography.Heading1>What are you looking for?</Typography.Heading1>
-        <Layout.Grid>
-          <Card.Box $bgColor={color.green} to='/pokedex'>
-            <Card.Title>Pokedex</Card.Title>
-          </Card.Box>
-          <Card.Box $bgColor={color.red} to='/moves'>
-            <Card.Title>Moves</Card.Title>
-          </Card.Box>
-          <Card.Box $bgColor={color.blue} to='/abilities'>
-            <Card.Title>Abilities</Card.Title>
-          </Card.Box>
-          <Card.Box $bgColor={color.yellow} to='/items'>
-            <Card.Title>Items</Card.Title>
-          </Card.Box>
-          <Card.Box $bgColor={color.violet} to='/locations'>
-            <Card.Title>Locations</Card.Title>
-          </Card.Box>
-          <Card.Box $bgColor={color.brown} to='/type'>
-            <Card.Title>Type</Card.Title>
-          </Card.Box>
-        </Layout.Grid>
+        <Layout.Grid>{Cards}</Layout.Grid>
       </Container>
     </>
   );
 };
 
-export default withTheme(Home);
+export default Home;
