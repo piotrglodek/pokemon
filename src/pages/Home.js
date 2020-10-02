@@ -11,7 +11,7 @@ const cardsData = [
   },
   {
     color: 'red',
-    to: '/movies',
+    to: '/moves',
     title: 'Moves',
   },
   {
