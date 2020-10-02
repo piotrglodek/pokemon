@@ -26,8 +26,8 @@ export const Wrapper = styled.div`
   display: flex;
 `;
 
-export const WrapperItem = styled.div`
-  width: 50%;
+export const BadgesWrapper = styled.div`
+  width: 40%;
 `;
 
 export const Badge = styled.p`
@@ -40,7 +40,7 @@ export const Badge = styled.p`
 
 export const Image = styled.img`
   display: block;
-  width: 100%;
+  width: 60%;
   height: 7.5rem;
   background: ${({ src }) => src} center center / contain no-repeat;
 `;
