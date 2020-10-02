@@ -8,6 +8,7 @@ export const Button = styled.button`
   outline: none;
   border: none;
   margin-top: 2rem;
+  cursor: pointer;
 `;
 
 export const Back = styled(BackArrowSvg)`
