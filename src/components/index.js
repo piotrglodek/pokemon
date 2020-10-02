@@ -8,3 +8,4 @@ export { Card };
 export { Container } from './Container/Container';
 export { Layout };
 export { Arrow };
+export { Spinner } from './Spinner/Spinner';
