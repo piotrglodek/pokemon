@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSetPageTitle } from '../hooks/useSetPageTitle';
+import { useSetPageTitle } from '../hooks';
 // components
-import { Container, Typography, Card, Layout } from '../components';
+import { Typography, Card, Layout } from '../components';
 
 const cardsData = [
   {
@@ -11,7 +11,7 @@ const cardsData = [
   },
   {
     color: 'red',
-    to: '/movies',
+    to: '/moves',
     title: 'Moves',
   },
   {
@@ -45,15 +45,14 @@ const Cards = cardsData.map(card => {
   );
 });
 
-const Home = () => {
-  useSetPageTitle('Home');
+const Home = props => {
+  const { pageTitle } = props;
+  useSetPageTitle(pageTitle);
 
   return (
     <>
-      <Container>
-        <Typography.Heading1>What are you looking for?</Typography.Heading1>
-        <Layout.Grid>{Cards}</Layout.Grid>
-      </Container>
+      <Typography.Heading1>What are you looking for?</Typography.Heading1>
+      <Layout.Grid>{Cards}</Layout.Grid>
     </>
   );
 };
