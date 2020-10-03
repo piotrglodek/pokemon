@@ -1,2 +1,2 @@
 export { useSetPageTitle } from './useSetPageTitle';
-export { useFetch } from './useFetch';
+export { useFetchPokemons } from './useFetchPokemons';
