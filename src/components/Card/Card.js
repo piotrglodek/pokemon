@@ -1,48 +1,61 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { handleColor } from '../../utils/styledUtils';
+import { handleColor, handleCardColor } from '../../utils/styledUtils';
 
 export const Box = styled(Link)`
   width: 100%;
   border-radius: 1.5rem;
-  padding: 2.5rem 1.8rem;
-  background-color: ${({ color }) => handleColor(color)};
+  padding: 1.6rem;
   text-decoration: none;
-  display: block;
-  box-shadow: 0px 3px 10px 0px ${({ color }) => handleColor(color)};
-`;
-
-export const Title = styled.h2`
-  font-size: ${({ theme: { fontSize } }) => fontSize.small};
-  font-weight: 700;
-  margin: 0;
-  color: ${({ color }) => handleColor(color)};
+  ${({ $cardColor, color }) =>
+    $cardColor
+      ? handleCardColor($cardColor)
+      : `background-color:${handleColor(color)}`};
 `;
 
 export const Wrapper = styled.div`
-  padding-top: 1rem;
-  width: 100%;
   display: flex;
 `;
 
 export const BadgesWrapper = styled.div`
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  & :nth-child(1) {
+    margin: 0.6rem 0;
+  }
+`;
+
+export const Title = styled.h2`
+  font-size: ${({ theme: { fontSize } }) => fontSize.medium};
+  font-weight: 700;
+  margin: 0;
+  color: ${({ color }) => handleColor(color)};
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
 `;
 
 export const Badge = styled.p`
+  padding: 0.6rem 1.2rem;
+  width: min-content;
   margin: 0;
-  padding-bottom: 0.6rem;
-  width: max-content;
-  border-radius: 0.8rem;
-  background-color: ${({ color }) => handleColor(color)};
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 3rem;
+  text-transform: capitalize;
+  color: ${({ color }) => handleColor(color)};
 `;
 
-export const Image = styled.img`
-  display: block;
+export const Image = styled.div`
+  display: flex;
+  min-height: 10rem;
   width: 60%;
-  height: 7.5rem;
-  background: ${({ src }) => src} center center / contain no-repeat;
+  background-image: url(${({ url }) => url});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 Box.propTypes = {
@@ -59,5 +72,5 @@ Badge.propTypes = {
 };
 
 Image.propTypes = {
-  src: PropTypes.string,
+  url: PropTypes.string,
 };
