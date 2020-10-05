@@ -45,9 +45,8 @@ const Cards = cardsData.map(card => {
   );
 });
 
-const Home = props => {
-  const { pageTitle } = props;
-  useSetPageTitle(pageTitle);
+const Home = () => {
+  useSetPageTitle('Home');
 
   return (
     <>
