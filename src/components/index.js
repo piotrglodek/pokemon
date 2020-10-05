@@ -10,3 +10,4 @@ export { Layout };
 export { Arrow };
 export { Spinner } from './Spinner/Spinner';
 export { default as Pokemons } from './Pokemons/Pokemons';
+export { default as NoData } from './NoData/NoData';

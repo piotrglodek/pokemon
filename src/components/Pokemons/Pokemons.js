@@ -1,6 +1,6 @@
 import React from 'react';
 // components
-import { Spinner, Typography, Card, Layout } from '../';
+import { Spinner, Card, Layout, NoData } from '../';
 // hooks
 import { useFetchPokemons } from '../../hooks';
 
@@ -8,18 +8,7 @@ function Pokemons() {
   const [pokemons, loading, errors] = useFetchPokemons();
   // FIXME: NoData component with image
   if (errors) {
-    return (
-      <>
-        <Typography.Text>{errors[0]}</Typography.Text>
-        <Typography.Text>
-          {errors[1]}
-          <a target='_blank' rel='noopener noreferrer' href={errors[2]}>
-            github issues
-          </a>
-          .
-        </Typography.Text>
-      </>
-    );
+    return <NoData errors={errors} />;
   }
 
   if (loading || !pokemons) {
