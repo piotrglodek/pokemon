@@ -1,22 +1,34 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 //hooks
-import { useSetPageTitle } from '../hooks';
+import { useSetPageTitle, useFetch } from '../hooks';
 // components
-import { Arrow, Typography, Pokemons } from '../components';
+import {
+  Arrow,
+  Typography,
+  Spinner,
+  NoData,
+  PokemonCard,
+  Layout,
+} from '../components';
 
 function Pokedex(props) {
-  const { pageTitle } = props;
-  useSetPageTitle(pageTitle);
-  const handleGoBack = useHistory().goBack;
+  useSetPageTitle('Pokedex');
+
+  const [pokemons, loading, errors] = useFetch();
+
+  const PokemonCards = pokemons.map(pokemon => {
+    return <PokemonCard key={pokemon.name} {...pokemon} />;
+  });
 
   return (
     <>
-      <Arrow.Button onClick={handleGoBack}>
+      <Arrow.Button onClick={() => props.history.goBack()}>
         <Arrow.Back />
       </Arrow.Button>
-      <Typography.Heading1>{pageTitle}</Typography.Heading1>
-      <Pokemons />
+      <Typography.Heading1>Pokedex</Typography.Heading1>
+      {loading && <Spinner />}
+      {errors && <NoData errors={errors} />}
+      {pokemons && <Layout.Grid>{PokemonCards}</Layout.Grid>}
     </>
   );
 }

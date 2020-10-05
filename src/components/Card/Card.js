@@ -72,5 +72,5 @@ Badge.propTypes = {
 };
 
 Image.propTypes = {
-  url: PropTypes.string,
+  url: PropTypes.string.isRequired,
 };

@@ -25,9 +25,11 @@ export const Text = styled.p`
 Text.propTypes = {
   small: PropTypes.bool,
   white: PropTypes.bool,
+  isBold: PropTypes.bool,
 };
 
 Text.defaultProps = {
   small: false,
   white: false,
+  isBold: false,
 };

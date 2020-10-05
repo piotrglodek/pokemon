@@ -12,7 +12,8 @@ export const Button = styled.button`
 `;
 
 export const Back = styled(BackArrowSvg)`
-  fill: ${({ theme: { color } }) => color.black};
+  fill: ${({ isWhite, theme: { color } }) =>
+    isWhite ? color.white : color.black};
   width: 3rem;
   height: 3rem;
 `;
