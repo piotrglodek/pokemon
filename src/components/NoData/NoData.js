@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '../';
 
-function NoData(props) {
+export const NoData = props => {
   const { errors } = props;
   return (
     <>
@@ -15,6 +15,4 @@ function NoData(props) {
       </Typography.Text>
     </>
   );
-}
-
-export default NoData;
+};
