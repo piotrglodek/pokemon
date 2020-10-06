@@ -19,7 +19,9 @@ export const PokemonCard = props => {
         <Card.Wrapper>
           <Card.BadgesWrapper>
             {pokemonTypes.map(type => (
-              <Card.Badge key={type}>{type}</Card.Badge>
+              <Card.Badge className='badge' key={type}>
+                {type}
+              </Card.Badge>
             ))}
           </Card.BadgesWrapper>
           {loadingImage && <Spinner />}
