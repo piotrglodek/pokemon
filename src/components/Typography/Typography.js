@@ -19,7 +19,7 @@ export const Text = styled.p`
   color: ${({ white, theme: { color } }) =>
     white ? color.white : color.black};
   font-weight: ${({ isBold }) => (isBold ? '700' : '400')};
-  padding: 2.5rem;
+  padding: 2.5rem 0;
 `;
 
 Text.propTypes = {
