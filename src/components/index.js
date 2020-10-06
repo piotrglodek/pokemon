@@ -10,3 +10,5 @@ export { Arrow };
 export { Spinner } from './Spinner/Spinner';
 export { NoData } from './NoData/NoData';
 export { PokemonCard } from './PokemonCard/PokemonCard';
+export { Pokemon } from './Pokemon/Pokemon';
+export { PokemonTabs } from './PokemonTabs/PokemonTabs';
