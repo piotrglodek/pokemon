@@ -8,7 +8,7 @@ export const handleCardColor = cardColor => {
       return `
       background-color:${color.green};
       box-shadow: 0px 3px 10px 0px ${color.green};
-      & p{
+      & .badge{
         background-color:${color.lGreen};
       }
       `;
@@ -18,7 +18,7 @@ export const handleCardColor = cardColor => {
       return `
       background-color:${color.red};
       box-shadow: 0px 3px 10px 0px ${color.red};
-      & p{
+      & .badge{
         background-color:${color.lRed};
       }
       `;
@@ -28,7 +28,7 @@ export const handleCardColor = cardColor => {
       return `
       background-color:${color.blue};
       box-shadow: 0px 3px 10px 0px ${color.blue};
-      & p{
+      & .badge{
         background-color:${color.lBlue};
       }
       `;
@@ -41,7 +41,7 @@ export const handleCardColor = cardColor => {
       return `
       background-color:${color.gray};
       box-shadow: 0px 3px 10px 0px ${color.gray};
-      & p{
+      & .badge{
         background-color:${color.lGray};
       }
       `;
@@ -50,7 +50,7 @@ export const handleCardColor = cardColor => {
       return `
       background-color:${color.violet};
       box-shadow: 0px 3px 10px 0px ${color.violet};
-      & p{
+      & .badge{
         background-color:${color.lViolet};
       }
       `;
@@ -59,7 +59,7 @@ export const handleCardColor = cardColor => {
       return `
       background-color:${color.pink};
       box-shadow: 0px 3px 10px 0px ${color.pink};
-      & p{
+      & .badge{
         background-color:${color.lPink};
       }
       `;
@@ -67,7 +67,7 @@ export const handleCardColor = cardColor => {
       return `
       background-color:${color.brown};
       box-shadow: 0px 3px 10px 0px ${color.brown};
-      & p{
+      & .badge{
         background-color:${color.lBrown};
       }
       `;
@@ -75,7 +75,7 @@ export const handleCardColor = cardColor => {
       return `
       background-color:${color.yellow};
       box-shadow: 0px 3px 10px 0px ${color.yellow};
-      & p{
+      & .badge{
         background-color:${color.lYellow};
       }
       `;
@@ -83,7 +83,7 @@ export const handleCardColor = cardColor => {
       return `
         background-color:${color.white};
         box-shadow: 0px 3px 10px 0px ${color.white};
-        & p{
+        & .badge{
           background-color:${color.white};
         }
         `;
