@@ -1,14 +1,8 @@
-import * as Typography from './Typography/Typography';
-import * as Card from './Card/Card';
-import * as Layout from './Layout/Layout';
-import * as Arrow from './Arrow/Arrow';
-
-export { Typography };
-export { Card };
-export { Layout };
-export { Arrow };
-export { Spinner } from './Spinner/Spinner';
-export { NoData } from './NoData/NoData';
-export { PokemonCard } from './PokemonCard/PokemonCard';
-export { Pokemon } from './Pokemon/Pokemon';
-export { PokemonTabs } from './PokemonTabs/PokemonTabs';
+export { Container } from './Layout/Container';
+export { Grid } from './Layout/Grid';
+export { Heading1 } from './Typography/Heading1';
+export { PokemonCard } from './Pokemon/PokemonCard';
+export { PokemonCardSkeleton } from './Pokemon/PokemonCardSkeleton';
+export { Pagination } from './Layout/Pagination';
+export { PokemonSinglePage } from './Pokemon/PokemonSinglePage';
+export { PokemonList } from './Pokemon/PokemonList';

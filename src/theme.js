@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const theme = {
   color: {
-    white: '#EAEBF5',
+    white: '#FFFFFF',
     lGray: '#B4B5BE',
     gray: '#7b9095',
     lViolet: '#A47EB4',
@@ -23,11 +23,15 @@ export const theme = {
     black: '#303943',
   },
   fontSize: {
-    small: '1.4rem',
-    medium: '1.6rem',
-    big: '3rem',
+    xs: '1.4rem',
+    sm: '1.6rem',
+    md: '2.4rem',
+    lg: '3rem',
+    xl: '3.6rem',
   },
 };
+
+const { color } = theme;
 
 export const GlobalStyle = createGlobalStyle`
     *,*::after,*::before{
@@ -42,4 +46,53 @@ export const GlobalStyle = createGlobalStyle`
         margin:0;
         font-family: 'Roboto', sans-serif;
     }
+
+   .grass,.bug{
+    background-color:${color.green};
+   }
+   .grass .badge,.bug .badge{
+    background-color:${color.lGreen};
+   }
+   .fire,.fighting,.dragon{
+    background-color:${color.red};
+   }
+   .fire .badge,.fighting .badge,.dragon .badge{
+    background-color:${color.lRed};
+   }
+   .water,.flying,.ice{
+    background-color:${color.blue};
+   }
+   .water .badge,.flying .badge,.ice .badge{
+    background-color:${color.lBlue};
+   }
+   .normal,.rock,.steel,.dark,.shadow,.unknown{
+    background-color:${color.gray};
+   }
+   .normal .badge,.rock .badge,.steel .badge,.dark .badge,.shadow .badge,.unknown .badge{
+    background-color:${color.lGray};
+   }
+   .poison,.ghost{
+    background-color:${color.violet};
+   }
+   .poison .badge,.ghost .badge{
+    background-color:${color.lViolet};
+   }
+   .fairy,.psychic{
+    background-color:${color.pink};
+   }
+   .fairy .badge,.psychic .badge{
+    background-color:${color.lPink};
+   }
+   .ground{
+    background-color:${color.brown};
+   }
+   .ground .badge{
+    background-color:${color.lBrown};
+   }
+   .electric{
+    background-color:${color.yellow};
+   }
+   .electric .badge{
+    background-color:${color.lYellow};
+   }
 `;
