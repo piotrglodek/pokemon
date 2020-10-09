@@ -6,6 +6,8 @@ import styled from 'styled-components';
 export const PokemonCard = props => {
   const { data } = props;
   const { id, name } = data;
+  const url = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
+
   const types = data.types.map(type => type.type.name);
 
   return (
@@ -20,9 +22,7 @@ export const PokemonCard = props => {
           ))}
         </CardBadges>
         <CardImgWrapper>
-          <CardImg
-            url={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
-          />
+          <CardImg url={url} />
         </CardImgWrapper>
       </CardRow>
     </Card>
