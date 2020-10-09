@@ -11,8 +11,16 @@ export const PokemonList = () => {
   const [prevUrl, setPrevUrl] = useState(null);
   const [nextUrl, setNextUrl] = useState(null);
 
-  const prevPage = () => setCurrentUrl(prevUrl);
-  const nextPage = () => setCurrentUrl(nextUrl);
+  const prevPage = e => {
+    e.stopPropagation();
+    window.scrollTo(0, 0);
+    setCurrentUrl(prevUrl);
+  };
+  const nextPage = e => {
+    e.stopPropagation();
+    window.scrollTo(0, 0);
+    setCurrentUrl(nextUrl);
+  };
 
   const fetchData = async (key, currentUrl) => {
     const response = await fetch(currentUrl);
@@ -38,6 +46,10 @@ export const PokemonList = () => {
   return (
     <>
       {error && `An error has occurred: ${error.message}`}
+      <Pagination
+        prevPage={prevUrl ? prevPage : null}
+        nextPage={nextUrl ? nextPage : null}
+      />
       <Grid>
         {isLoading &&
           Array(numberOfPokemons)

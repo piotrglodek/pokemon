@@ -6,3 +6,4 @@ export { PokemonCardSkeleton } from './Pokemon/PokemonCardSkeleton';
 export { Pagination } from './Layout/Pagination';
 export { PokemonSinglePage } from './Pokemon/PokemonSinglePage';
 export { PokemonList } from './Pokemon/PokemonList';
+export { Spinner } from './Layout/Spinner';
