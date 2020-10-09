@@ -11,11 +11,13 @@ export const PokemonList = () => {
   const [prevUrl, setPrevUrl] = useState(null);
   const [nextUrl, setNextUrl] = useState(null);
 
-  const prevPage = () => {
+  const prevPage = e => {
+    e.stopPropagation();
     window.scrollTo(0, 0);
     setCurrentUrl(prevUrl);
   };
-  const nextPage = () => {
+  const nextPage = e => {
+    e.stopPropagation();
     window.scrollTo(0, 0);
     setCurrentUrl(nextUrl);
   };
