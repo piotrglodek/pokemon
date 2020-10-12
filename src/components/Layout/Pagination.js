@@ -5,10 +5,14 @@ export const Pagination = ({ prevPage, nextPage }) => {
   return (
     <StyledContainer>
       <StyledCol justify='flex-end'>
-        {prevPage && <StyledButton onClick={prevPage}>Previous</StyledButton>}
+        <StyledButton disabled={!prevPage} onClick={prevPage}>
+          Previous
+        </StyledButton>
       </StyledCol>
       <StyledCol>
-        {nextPage && <StyledButton onClick={nextPage}>Next</StyledButton>}
+        <StyledButton disabled={!nextPage} onClick={nextPage}>
+          Next
+        </StyledButton>
       </StyledCol>
     </StyledContainer>
   );
@@ -38,4 +42,9 @@ const StyledButton = styled.button`
   cursor: pointer;
   margin: 0 1rem;
   border-radius: 0.3rem;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
 `;
